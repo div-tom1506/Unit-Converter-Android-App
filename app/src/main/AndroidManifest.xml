@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -26,13 +26,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TemperatureActivity"/>
-        <activity android:name=".BMIActivity"/>
-        <activity android:name=".CalculatorActivity"/>
-        <activity android:name=".CurrencyActivity"/>
-        <activity android:name=".LengthActivity"/>
-        <activity android:name=".WeightActivity"/>
-        <activity android:name=".WorldTimeActivity"/>
+        <activity android:name=".TemperatureActivity" />
+        <activity android:name=".BMIActivity" />
+        <activity android:name=".CalculatorActivity" />
+        <activity android:name=".CurrencyActivity" />
+        <activity android:name=".LengthActivity" />
+        <activity android:name=".WeightActivity" />
+        <activity android:name=".WorldTimeActivity" />
     </application>
 
 </manifest>

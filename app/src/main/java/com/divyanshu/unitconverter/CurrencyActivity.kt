@@ -17,7 +17,7 @@ class CurrencyActivity : AppCompatActivity() {
     private lateinit var btnConvert: Button
 
     // has to be hidden
-    private val API_KEY = "f82a6a918976c218eae9b351"
+    private val API_KEY = BuildConfig.EXCHANGE_RATE_API_KEY
     private val BASE_URL = "https://v6.exchangerate-api.com/v6/$API_KEY/latest/"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -70,7 +70,8 @@ class CurrencyActivity : AppCompatActivity() {
             "PKR"  // Pakistani Rupee
         )
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, currencyOptions)
+        val adapter =
+            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, currencyOptions)
         spinnerFromCurrency.adapter = adapter
         spinnerToCurrency.adapter = adapter
 
@@ -114,7 +115,8 @@ class CurrencyActivity : AppCompatActivity() {
                     // log 2
                     Log.d("DebugTag2", "jsonResponse: $jsonResponse")
                     if (jsonResponse.has("conversion_rates")) {
-                        val rate = jsonResponse.getJSONObject("conversion_rates").getDouble(toCurrency)
+                        val rate =
+                            jsonResponse.getJSONObject("conversion_rates").getDouble(toCurrency)
                         // log 3
                         Log.d("DebugTag3", "rate: $rate")
                         val convertedAmount = amount * rate
@@ -124,7 +126,11 @@ class CurrencyActivity : AppCompatActivity() {
                         }
                     } else {
                         runOnUiThread {
-                            Toast.makeText(applicationContext, "Invalid response from server", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                applicationContext,
+                                "Invalid response from server",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
                     }
                 }

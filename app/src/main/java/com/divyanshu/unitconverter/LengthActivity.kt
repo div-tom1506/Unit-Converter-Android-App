@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class LengthActivity: AppCompatActivity() {
+class LengthActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,7 +21,16 @@ class LengthActivity: AppCompatActivity() {
         val spinnerFromUnit = findViewById<Spinner>(R.id.spinnerFromUnit)
         val spinnerToUnit = findViewById<Spinner>(R.id.spinnerToUnit)
 
-        val lengthUnits = arrayOf("Kilometers", "Meters", "Centimeters", "Millimeters", "Miles", "Yards", "Feet", "Inches")
+        val lengthUnits = arrayOf(
+            "Kilometers",
+            "Meters",
+            "Centimeters",
+            "Millimeters",
+            "Miles",
+            "Yards",
+            "Feet",
+            "Inches"
+        )
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, lengthUnits)
         spinnerFromUnit.adapter = adapter
         spinnerToUnit.adapter = adapter

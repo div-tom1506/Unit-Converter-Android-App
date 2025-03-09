@@ -8,26 +8,26 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="World Time"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_gravity="center"/>
+        android:textStyle="bold" />
 
     <Spinner
         android:id="@+id/spinnerTimeZone"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 
     <AnalogClock
         android:id="@+id/analogClock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center" />
 
     <TextClock
         android:id="@+id/textClock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:format12Hour="hh:mm a"/>
+        android:format12Hour="hh:mm a" />
 </LinearLayout>

@@ -4,100 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WeightActivity"
-    android:padding="20dp">
+    android:padding="20dp"
+    tools:context=".WeightActivity">
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
         android:text="@string/weight_converter"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:paddingBottom="16dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/inputRow"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
 
         <EditText
             android:id="@+id/etWeight"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/input_bg"
             android:hint="@string/enter_weight"
             android:inputType="numberDecimal"
-            android:padding="12dp"
-            android:background="@drawable/input_bg"/>
+            android:padding="12dp" />
 
         <Spinner
             android:id="@+id/spinnerFromUnit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:background="@drawable/spinner_bg"/>
+            android:background="@drawable/spinner_bg" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/convertToRow"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/inputRow"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputRow">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
             android:text="@string/convert_to"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginEnd="10dp"/>
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/spinnerToUnit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/spinner_bg"/>
+            android:background="@drawable/spinner_bg" />
     </LinearLayout>
 
     <Button
         android:id="@+id/btnConvert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_bg"
+        android:gravity="center"
+        android:padding="12dp"
         android:text="@string/convert"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
-        android:background="@drawable/button_bg"
-        android:padding="12dp"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/convertToRow"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/convertToRow" />
 
     <TextView
         android:id="@+id/tvResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text=""
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/btnConvert"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnConvert" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

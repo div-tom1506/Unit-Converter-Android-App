@@ -6,7 +6,6 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import java.text.DecimalFormat
 
 class BMIActivity : AppCompatActivity() {
 
@@ -40,7 +39,8 @@ class BMIActivity : AppCompatActivity() {
                 tvBMIResult.text = "BMI: ${String.format("%.2f", bmi)}"
                 tvBMICategory.text = "Category: $category"
             } else {
-                Toast.makeText(this, "Please enter both weight and height!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please enter both weight and height!", Toast.LENGTH_SHORT)
+                    .show()
             }
 
         }

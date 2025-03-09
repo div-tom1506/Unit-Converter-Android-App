@@ -48,14 +48,14 @@ class TemperatureActivity : AppCompatActivity() {
 
         val celsius = when (fromUnit) {
             "Celsius (°C)" -> value
-            "Fahrenheit (°F)" -> (value - 32) * 5/9
+            "Fahrenheit (°F)" -> (value - 32) * 5 / 9
             "Kelvin (K)" -> value - 273.15
             else -> value
         }
 
         return when (toUnit) {
             "Celsius (°C)" -> celsius
-            "Fahrenheit (°F)" -> (celsius * 9/5) + 32
+            "Fahrenheit (°F)" -> (celsius * 9 / 5) + 32
             "Kelvin (K)" -> celsius + 273.15
             else -> celsius
         }

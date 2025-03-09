@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,87 +14,87 @@
         android:text="@string/currency_converter"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/llFromSection"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/tvTitle">
 
         <EditText
             android:id="@+id/etAmount"
             android:layout_width="0dp"
-            android:layout_weight="1.5"
             android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:background="@drawable/input_bg"
             android:hint="@string/enter_amount"
-            android:textSize="16sp"
             android:inputType="numberDecimal"
             android:padding="12dp"
-            android:background="@drawable/input_bg"/>
+            android:textSize="16sp" />
 
         <Spinner
             android:id="@+id/spinnerFromCurrency"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:background="@drawable/spinner_bg"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_bg" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/llToSection"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/llFromSection"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/llFromSection">
 
         <TextView
             android:id="@+id/tvResult"
             android:layout_width="0dp"
-            android:layout_weight="1.5"
             android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:background="@drawable/input_bg"
+            android:gravity="center"
+            android:padding="12dp"
             android:text=""
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:padding="12dp"
-            android:background="@drawable/input_bg"
-            android:gravity="center"/>
+            android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/spinnerToCurrency"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:background="@drawable/spinner_bg"
-            android:layout_marginStart="8dp"/>
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/spinner_bg" />
     </LinearLayout>
 
     <Button
         android:id="@+id/btnConvert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_bg"
+        android:gravity="center"
+        android:padding="12dp"
         android:text="@string/convert"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/white"
-        android:background="@drawable/button_bg"
-        android:padding="12dp"
-        android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/llToSection"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llToSection" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
