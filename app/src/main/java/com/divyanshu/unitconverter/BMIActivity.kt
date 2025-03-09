@@ -4,64 +4,57 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.text.DecimalFormat
 
 class BMIActivity : AppCompatActivity() {
 
-    private lateinit var editTextWeight: EditText
-    private lateinit var editTextHeight: EditText
-    private lateinit var buttonCalculateBMI: Button
-    private lateinit var textViewBMIResult: TextView
+    private lateinit var etWeight: EditText
+    private lateinit var etHeight: EditText
+    private lateinit var btnCalculateBMI: Button
+    private lateinit var tvBMIResult: TextView
+    private lateinit var tvBMICategory: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bmi)
 
-        // Initialize UI Elements
-        editTextWeight = findViewById(R.id.editTextWeight)
-        editTextHeight = findViewById(R.id.editTextHeight)
-        buttonCalculateBMI = findViewById(R.id.buttonCalculateBMI)
-        textViewBMIResult = findViewById(R.id.textViewBMIResult)
+        etWeight = findViewById(R.id.etWeight)
+        etHeight = findViewById(R.id.etHeight)
+        btnCalculateBMI = findViewById(R.id.btnCalculateBMI)
+        tvBMIResult = findViewById(R.id.tvBMIResult)
+        tvBMICategory = findViewById(R.id.tvBMICategory)
 
-        // Button Click Listener
-        buttonCalculateBMI.setOnClickListener {
-            calculateBMI()
+        btnCalculateBMI.setOnClickListener {
+            val weightInput = etWeight.text.toString()
+            val heightInput = etHeight.text.toString()
+
+            if (weightInput.isNotEmpty() && heightInput.isNotEmpty()) {
+                val weight = weightInput.toDouble()
+                val height = heightInput.toDouble() / 100
+
+                val bmi = calculateBMI(weight, height)
+                val category = getBMICategory(bmi)
+
+                tvBMIResult.text = "BMI: ${String.format("%.2f", bmi)}"
+                tvBMICategory.text = "Category: $category"
+            } else {
+                Toast.makeText(this, "Please enter both weight and height!", Toast.LENGTH_SHORT).show()
+            }
+
         }
     }
 
-    private fun calculateBMI() {
-        val weightString = editTextWeight.text.toString()
-        val heightString = editTextHeight.text.toString()
-
-        if (weightString.isNotEmpty() && heightString.isNotEmpty()) {
-            try {
-                val weight = weightString.toFloat()
-                val height = heightString.toFloat() / 100 // Convert cm to meters
-
-                if (height > 0) {
-                    val bmi: Double =
-                        weight.toDouble() / (height.toDouble() * height.toDouble()) // Calculate as Double
-                    val decimalFormat = DecimalFormat("#.##")
-                    val formattedBMI = decimalFormat.format(bmi)
-
-                    textViewBMIResult.text = "BMI: $formattedBMI\n${getBMICategory(bmi)}"
-                } else {
-                    textViewBMIResult.text = "Invalid height."
-                }
-            } catch (e: NumberFormatException) {
-                textViewBMIResult.text = "Invalid input. Please enter valid numbers."
-            }
-        } else {
-            textViewBMIResult.text = "Please enter weight and height."
-        }
+    private fun calculateBMI(weight: Double, height: Double): Double {
+        return weight / (height * height)
     }
 
     private fun getBMICategory(bmi: Double): String {
         return when {
             bmi < 18.5 -> "Underweight"
-            bmi < 25 -> "Normal weight"
-            bmi < 30 -> "Overweight"
+            bmi in 18.5..24.9 -> "Normal"
+            bmi in 25.0..29.9 -> "Overweight"
             else -> "Obese"
         }
     }

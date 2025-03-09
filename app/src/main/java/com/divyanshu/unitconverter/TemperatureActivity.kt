@@ -15,35 +15,49 @@ class TemperatureActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_temperature)
 
-        // UI Elements
         val etTemperature = findViewById<EditText>(R.id.etTemperature)
         val btnConvert = findViewById<Button>(R.id.btnConvert)
         val tvResult = findViewById<TextView>(R.id.tvResult)
-        val spinnerConversionType = findViewById<Spinner>(R.id.spinnerConversionType)
+        val spinnerFromUnit = findViewById<Spinner>(R.id.spinnerFromUnit)
+        val spinnerToUnit = findViewById<Spinner>(R.id.spinnerToUnit)
 
-        // Spinner Items (Celsius ↔ Fahrenheit)
-        val conversionOptions = arrayOf("Celsius to Fahrenheit", "Fahrenheit to Celsius")
-        val adapter =
-            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, conversionOptions)
-        spinnerConversionType.adapter = adapter
+        val tempUnits = arrayOf("Celsius (°C)", "Fahrenheit (°F)", "Kelvin (K)")
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, tempUnits)
+        spinnerFromUnit.adapter = adapter
+        spinnerToUnit.adapter = adapter
 
         btnConvert.setOnClickListener {
             val inputTemp = etTemperature.text.toString()
 
             if (inputTemp.isNotEmpty()) {
                 val tempValue = inputTemp.toDouble()
-                val selectedConversion = spinnerConversionType.selectedItem.toString()
+                val fromUnit = spinnerFromUnit.selectedItem.toString()
+                val toUnit = spinnerToUnit.selectedItem.toString()
 
-                val convertedTemp = when (selectedConversion) {
-                    "Celsius to Fahrenheit" -> String.format("%.2f °F", (tempValue * 9 / 5) + 32)
-                    "Fahrenheit to Celsius" -> String.format("%.2f °C", (tempValue - 32) * 5 / 9)
-                    else -> "Invalid Selection"
-                }
+                val convertedTemp = convertTemperature(tempValue, fromUnit, toUnit)
+                tvResult.text = "Result: ${String.format("%.2f", convertedTemp)} $toUnit"
 
-                tvResult.text = "Result: $convertedTemp"
             } else {
                 Toast.makeText(this, "Please enter a temperature value!", Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+
+    private fun convertTemperature(value: Double, fromUnit: String, toUnit: String): Double {
+
+        val celsius = when (fromUnit) {
+            "Celsius (°C)" -> value
+            "Fahrenheit (°F)" -> (value - 32) * 5/9
+            "Kelvin (K)" -> value - 273.15
+            else -> value
+        }
+
+        return when (toUnit) {
+            "Celsius (°C)" -> celsius
+            "Fahrenheit (°F)" -> (celsius * 9/5) + 32
+            "Kelvin (K)" -> celsius + 273.15
+            else -> celsius
         }
     }
 }
