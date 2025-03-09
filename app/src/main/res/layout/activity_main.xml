@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/unit_converter"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"/>
+    
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="4"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/btnTemperature"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/temperature"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:id="@+id/btnWeight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/weight"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:id="@+id/btnCurrency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/currency"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:id="@+id/btnBMI"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/bmi"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:id="@+id/btnCalculator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/calculator"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:id="@+id/btnWorldTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/worldtime"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:id="@+id/btnConvertLength"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/length"
+            android:layout_columnWeight="1"
+            android:layout_margin="5dp"/>
+    </GridLayout>
+
+</LinearLayout>

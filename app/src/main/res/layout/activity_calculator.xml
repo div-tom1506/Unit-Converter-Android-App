@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/inputCalculator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/_0"
+        android:gravity="end"
+        android:textSize="24sp"
+        android:inputType="none"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:rowCount="5"
+        android:padding="10dp">
+
+        <Button android:text="@string/_7"/>
+        <Button android:text="@string/_8"/>
+        <Button android:text="@string/_9"/>
+        <Button android:text="@string/division"/>
+
+        <Button android:text="@string/_4"/>
+        <Button android:text="@string/_5"/>
+        <Button android:text="@string/_6"/>
+        <Button android:text="@string/multiply"/>
+
+        <Button android:text="@string/_1"/>
+        <Button android:text="@string/_2"/>
+        <Button android:text="@string/_3"/>
+        <Button android:text="@string/minus"/>
+
+        <Button android:text="@string/clear"/>
+        <Button android:text="@string/_0"/>
+        <Button android:text="@string/equalTo"/>
+        <Button android:text="@string/add"/>
+    </GridLayout>
+
+</LinearLayout>
