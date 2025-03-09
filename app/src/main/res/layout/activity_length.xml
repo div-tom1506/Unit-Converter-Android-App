@@ -43,6 +43,7 @@
             android:id="@+id/spinnerFromUnit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/spinner_bg"
             android:layout_marginStart="10dp"/>
     </LinearLayout>
 
@@ -67,16 +68,21 @@
         <Spinner
             android:id="@+id/spinnerToUnit"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="@drawable/spinner_bg"/>
     </LinearLayout>
 
     <Button
         android:id="@+id/btnConvert"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/convert"
-        android:backgroundTint="@color/purple_500"
-        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/button_bg"
+        android:padding="12dp"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/convertToRow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,7 +92,7 @@
         android:id="@+id/tvResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/result"
+        android:text=""
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/btnConvert"

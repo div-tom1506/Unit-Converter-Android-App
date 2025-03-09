@@ -47,21 +47,26 @@
 
     <Button
         android:id="@+id/btnCalculateBMI"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/calculate_bmi"
-        android:backgroundTint="@color/purple_500"
-        android:textColor="@android:color/white"
+        android:text="@string/convert"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/button_bg"
+        android:padding="12dp"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/etHeight"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="20dp"/>
 
+
     <TextView
         android:id="@+id/tvBMIResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/bmi"
+        android:text=""
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/btnCalculateBMI"
@@ -73,7 +78,7 @@
         android:id="@+id/tvBMICategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/category"
+        android:text=""
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="@android:color/darker_gray"
