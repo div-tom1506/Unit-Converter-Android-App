@@ -1,0 +1,29 @@
+<resources>
+    <style name="ButtonBase">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">80dp</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/button_background</item>
+    </style>
+
+    <style name="ButtonNumber" parent="ButtonBase">
+        <item name="android:backgroundTint">#FFFFFF</item>
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <style name="ButtonOperator" parent="ButtonBase">
+        <item name="android:backgroundTint">#FF9800</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="ButtonOperatorRed" parent="ButtonBase">
+        <item name="android:backgroundTint">#F44336</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="ButtonEquals" parent="ButtonBase">
+        <item name="android:backgroundTint">#4CAF50</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+</resources>

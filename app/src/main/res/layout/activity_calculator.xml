@@ -1,57 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:background="#FFFFFF"
+    tools:context=".CalculatorActivity">
 
-    <EditText
-        android:id="@+id/inputCalculator"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="end"
-        android:hint="@string/_0"
-        android:inputType="none"
-        android:textSize="24sp" />
+    <!-- Result Display -->
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        android:gravity="end|center_vertical"
+        android:padding="16dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <GridLayout
-        android:layout_width="match_parent"
+    <!-- Table Layout for Buttons -->
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:columnCount="4"
         android:padding="10dp"
-        android:rowCount="5">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <Button android:text="@string/_7" />
+        <!-- Row 1 -->
+        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:id="@+id/btnClear" android:text="C" style="@style/ButtonOperatorRed"/>
+            <Button android:id="@+id/btnBrackets" android:text="()" style="@style/ButtonOperator"/>
+            <Button android:id="@+id/btnPercent" android:text="%" style="@style/ButtonOperator"/>
+            <Button android:id="@+id/btnDivide" android:text="÷" style="@style/ButtonOperator"/>
+        </TableRow>
 
-        <Button android:text="@string/_8" />
+        <!-- Row 2 -->
+        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:id="@+id/btn7" android:text="7" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
+            <Button android:id="@+id/btn8" android:text="8" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
+            <Button android:id="@+id/btn9" android:text="9" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
+            <Button android:id="@+id/btnMultiply" android:text="×" style="@style/ButtonOperator"/>
+        </TableRow>
 
-        <Button android:text="@string/_9" />
+        <!-- Row 3 -->
+        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:id="@+id/btn4" android:text="4" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
+            <Button android:id="@+id/btn5" android:text="5" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
+            <Button android:id="@+id/btn6" android:text="6" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
+            <Button android:id="@+id/btnSubtract" android:text="-" style="@style/ButtonOperator"/>
+        </TableRow>
 
-        <Button android:text="@string/division" />
+        <!-- Row 4 -->
+        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:id="@+id/btn1" android:text="1" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
+            <Button android:id="@+id/btn2" android:text="2" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
+            <Button android:id="@+id/btn3" android:text="3" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
+            <Button android:id="@+id/btnAdd" android:text="+" style="@style/ButtonOperator"/>
+        </TableRow>
 
-        <Button android:text="@string/_4" />
+        <!-- Row 5 -->
+        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+            <Button android:id="@+id/btnPlusMinus" android:text="+/-" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
+            <Button android:id="@+id/btn0" android:text="0" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
+            <Button android:id="@+id/btnDot" android:text="." style="@style/ButtonNumber" android:background="@drawable/button_number"/>
+            <Button android:id="@+id/btnEquals" android:text="=" style="@style/ButtonEquals"/>
+        </TableRow>
 
-        <Button android:text="@string/_5" />
-
-        <Button android:text="@string/_6" />
-
-        <Button android:text="@string/multiply" />
-
-        <Button android:text="@string/_1" />
-
-        <Button android:text="@string/_2" />
-
-        <Button android:text="@string/_3" />
-
-        <Button android:text="@string/minus" />
-
-        <Button android:text="@string/clear" />
-
-        <Button android:text="@string/_0" />
-
-        <Button android:text="@string/equalTo" />
-
-        <Button android:text="@string/add" />
-    </GridLayout>
-
-</LinearLayout>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -74,5 +74,6 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.json)
     implementation(libs.okhttp)
+    implementation(libs.androidx.gridlayout)
 
 }
