@@ -48,4 +48,12 @@
     <string name="convert_to">Convert to:</string>
     <string name="temperature_converter">Temperature Converter</string>
     <string name="category">Category: </string>
+    <string name="c">C</string>
+    <string name="_brackets">()</string>
+    <string name="_percentage">%</string>
+    <string name="_divide">÷</string>
+    <string name="_sub">-</string>
+    <string name="_multiply">×</string>
+    <string name="_Plus_minus">+/-</string>
+    <string name="point">.</string>
 </resources>

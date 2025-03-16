@@ -3,6 +3,7 @@ agp = "8.9.0"
 cardview = "1.0.0"
 constraintlayout = "2.2.1"
 converterGson = "2.9.0"
+exp4j = "0.4.8"
 gridlayout = "1.0.0"
 json = "20210307"
 kotlin = "2.0.21"
@@ -24,6 +25,7 @@ androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayo
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-gridlayout = { module = "androidx.gridlayout:gridlayout", version.ref = "gridlayout" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+exp4j = { module = "net.objecthunter:exp4j", version.ref = "exp4j" }
 json = { module = "org.json:json", version.ref = "json" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }

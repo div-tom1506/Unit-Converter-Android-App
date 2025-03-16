@@ -75,5 +75,6 @@ dependencies {
     implementation(libs.json)
     implementation(libs.okhttp)
     implementation(libs.androidx.gridlayout)
+    implementation(libs.exp4j)
 
 }
