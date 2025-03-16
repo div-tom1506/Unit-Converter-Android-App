@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -35,43 +34,145 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <!-- Row 1 -->
-        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
-            <Button android:id="@+id/btnClear" android:text="@string/c" style="@style/ButtonOperatorRed"/>
-            <Button android:id="@+id/btnBrackets" android:text="@string/_brackets" style="@style/ButtonOperator"/>
-            <Button android:id="@+id/btnPercent" android:text="@string/_percentage" style="@style/ButtonOperator"/>
-            <Button android:id="@+id/btnDivide" android:text="@string/_divide" style="@style/ButtonOperator"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnClear"
+                style="@style/ButtonOperatorRed"
+                android:text="@string/c" />
+
+            <Button
+                android:id="@+id/btnBrackets"
+                style="@style/ButtonOperator"
+                android:text="@string/_brackets" />
+
+            <Button
+                android:id="@+id/btnPercent"
+                style="@style/ButtonOperator"
+                android:text="@string/_percentage" />
+
+            <Button
+                android:id="@+id/btnDivide"
+                style="@style/ButtonOperator"
+                android:text="@string/_divide" />
         </TableRow>
 
         <!-- Row 2 -->
-        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
-            <Button android:id="@+id/btn7" android:text="@string/_7" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
-            <Button android:id="@+id/btn8" android:text="@string/_8" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
-            <Button android:id="@+id/btn9" android:text="@string/_9" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
-            <Button android:id="@+id/btnMultiply" android:text="@string/_multiply" style="@style/ButtonOperator"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn7"
+                style="@style/ButtonNumber"
+                android:background="@drawable/button_number"
+                android:text="@string/_7" />
+
+            <Button
+                android:id="@+id/btn8"
+                style="@style/ButtonNumber"
+                android:background="@drawable/button_number"
+                android:text="@string/_8" />
+
+            <Button
+                android:id="@+id/btn9"
+                style="@style/ButtonNumber"
+                android:background="@drawable/button_number"
+                android:text="@string/_9" />
+
+            <Button
+                android:id="@+id/btnMultiply"
+                style="@style/ButtonOperator"
+                android:text="@string/_multiply" />
         </TableRow>
 
         <!-- Row 3 -->
-        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
-            <Button android:id="@+id/btn4" android:text="@string/_4" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
-            <Button android:id="@+id/btn5" android:text="@string/_5" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
-            <Button android:id="@+id/btn6" android:text="@string/_6" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
-            <Button android:id="@+id/btnSubtract" android:text="@string/_sub" style="@style/ButtonOperator"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn4"
+                style="@style/ButtonNumber"
+                android:background="@drawable/button_number"
+                android:text="@string/_4" />
+
+            <Button
+                android:id="@+id/btn5"
+                style="@style/ButtonNumber"
+                android:background="@drawable/button_number"
+                android:text="@string/_5" />
+
+            <Button
+                android:id="@+id/btn6"
+                style="@style/ButtonNumber"
+                android:background="@drawable/button_number"
+                android:text="@string/_6" />
+
+            <Button
+                android:id="@+id/btnSubtract"
+                style="@style/ButtonOperator"
+                android:text="@string/_sub" />
         </TableRow>
 
         <!-- Row 4 -->
-        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
-            <Button android:id="@+id/btn1" android:text="@string/_1" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
-            <Button android:id="@+id/btn2" android:text="@string/_2" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
-            <Button android:id="@+id/btn3" android:text="@string/_3" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
-            <Button android:id="@+id/btnAdd" android:text="@string/add" style="@style/ButtonOperator"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn1"
+                style="@style/ButtonNumber"
+                android:background="@drawable/button_number"
+                android:text="@string/_1" />
+
+            <Button
+                android:id="@+id/btn2"
+                style="@style/ButtonNumber"
+                android:background="@drawable/button_number"
+                android:text="@string/_2" />
+
+            <Button
+                android:id="@+id/btn3"
+                style="@style/ButtonNumber"
+                android:background="@drawable/button_number"
+                android:text="@string/_3" />
+
+            <Button
+                android:id="@+id/btnAdd"
+                style="@style/ButtonOperator"
+                android:text="@string/add" />
         </TableRow>
 
         <!-- Row 5 -->
-        <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
-            <Button android:id="@+id/btnPlusMinus" android:text="@string/_Plus_minus" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
-            <Button android:id="@+id/btn0" android:text="@string/_0" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
-            <Button android:id="@+id/btnDot" android:text="@string/point" style="@style/ButtonNumber" android:background="@drawable/button_number"/>
-            <Button android:id="@+id/btnEquals" android:text="@string/equalTo" style="@style/ButtonEquals"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnPlusMinus"
+                style="@style/ButtonNumber"
+                android:background="@drawable/button_number"
+                android:text="@string/_Plus_minus" />
+
+            <Button
+                android:id="@+id/btn0"
+                style="@style/ButtonNumber"
+                android:background="@drawable/button_number"
+                android:text="@string/_0" />
+
+            <Button
+                android:id="@+id/btnDot"
+                style="@style/ButtonNumber"
+                android:background="@drawable/button_number"
+                android:text="@string/point" />
+
+            <Button
+                android:id="@+id/btnEquals"
+                style="@style/ButtonEquals"
+                android:text="@string/equalTo" />
         </TableRow>
 
     </TableLayout>
